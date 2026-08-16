@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import alarmSound from "./assets/amaze amaze amaze project hail mary.wav"
+import alarmSound from "./assets/amazeAlarm.mp3"
 import pixelPet from "./assets/rocky.gif"
 import './App.css'
 
