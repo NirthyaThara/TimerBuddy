@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Root / Body ── */
+body,
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  border: 2px solid rgba(146, 142, 142, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* ── Outer wrapper ── */
+.mainView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Card ── */
+.card {
+  width: 290px;
+  background: #111118;
+  border-radius: 20px;
+  padding: 12px 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.titlebar {
+  -webkit-app-region: drag;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0 4px;
+}
+
+.titlebar-name {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: rgba(200, 190, 220, 0.45);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.titlebarButtons {
+  -webkit-app-region: no-drag;
+  display: flex;
+  gap: 6px;
+}
+
+.controlButtons {
+  -webkit-app-region: no-drag;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(200, 190, 220, 0.55);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+}
+
+.minimize:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(220, 210, 240, 0.9);
+}
+
+.close:hover {
+  background: rgba(160, 50, 70, 0.5);
+  border-color: rgba(200, 60, 80, 0.4);
+  color: rgba(255, 180, 180, 0.95);
+}
+
+/* ── Galaxy Panel ── */
+.galaxy-panel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background-image: url('./assets/spacedp.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* vignette overlay */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* ── Time area ── */
+.time-area {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+/* ── Big time display ── */
+.time {
+  font-size: 50px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+
+.time:hover {
+  opacity: 0.75;
+}
+
+.time-colon {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+  margin: 0 1px;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* ── Progress track ── */
+.progress-track {
+  position: relative;
+  z-index: 2;
+  width: 72%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: rgba(192, 132, 252, 0.7);
+  transition: width 0.8s linear;
+}
+
+/* ── Input mode ── */
+.timeInput {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.inputBox {
+  width: 60px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 50px;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.inputBox::-webkit-inner-spin-button,
+.inputBox::-webkit-outer-spin-button {
+  display: none;
+}
+
+.colon {
+  font-size: 44px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1;
+}
+
+.set-btn {
+  margin-left: 6px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.set-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Buttons row ── */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  flex: 1;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: rgba(220, 215, 230, 0.85);
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: opacity 0.15s;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  opacity: 0.6;
+}
+
+.btn-start {
+  background: rgba(80, 60, 120, 0.45);
+}
+
+.btn-stop {
+  background: rgba(120, 50, 75, 0.45);
+}
+
+.btn-reset {
+  background: rgba(50, 50, 80, 0.45);
+}
+
+/* ── Alarm Modal Overlay ── */
+.alarmModal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  z-index: 10;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Alarm Content Card ── */
+.alarmContent {
+  width: 240px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  border-radius: 18px;
+  text-align: center;
+  background: #18171f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Pixel Pet ── */
+.pixel-pet {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 96px;
+  height: 96px;
+}
+
+/* ── Alarm Title ── */
+.alarm-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgba(230, 220, 255, 0.95);
+  /* margin-top: 2px; */
+}
+
+/* ── Alarm Sub-text ── */
+.alarm-msg {
+  font-size: 12px;
+  color: rgba(200, 190, 220, 0.55);
+  line-height: 1.5;
+}
+
+/* ── Modal button row ── */
+.alarm-btns {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.zzz {
+  flex: 1;
+  height: 38px;
+  padding: 0;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
