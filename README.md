@@ -1,16 +1,60 @@
-# React + Vite
+# ⏱️ TimerBuddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, minimal desktop timer built with **React + Electron**.
 
-Currently, two official plugins are available:
+I created TimerBuddy as a small personal project to explore how web technologies can be turned into a desktop application. It started as a simple timer and gradually evolved into a small productivity companion with custom pixel art and an alarm experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- ⏱️ Set timers using hours, minutes, and seconds
+- ▶️ Start, stop, and reset the timer
+- 📊 Visual progress bar
+- 🔔 Plays an alarm sound when the timer ends
+- 🔁 Alarm sound can loop until dismissed
+- 🐾 Custom pixel-art animation when the timer finishes
+- 🪟 Frameless desktop window
+- ↔️ Draggable window
+- ➖ Minimize and close controls
+- 🌌 Minimal space-themed UI
+- 💻 Runs as a standalone Windows desktop application
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- Electron
+- Vite
+- CSS
+- Electron Builder
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Preview
+
+![TimerBuddy Preview](src/assets/preview.png)
+
+## 📥 Download & Install
+
+You don't need Node.js or any development setup to use TimerBuddy.
+
+### Windows
+
+1. Go to the **[Releases](../../releases)** section of this repository.
+2. Download the latest:
+
+   **`TimerBuddy Setup.exe`**
+
+3. Open the downloaded installer.
+4. Follow the installation steps.
+5. Launch **TimerBuddy** from the Start Menu or desktop shortcut.
+
+That's it! 🎉
+
+> **Note:** TimerBuddy is currently packaged for Windows.
+
+## 🚀 Run from Source
+
+If you want to explore or modify the project:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/TimerBuddy.git
