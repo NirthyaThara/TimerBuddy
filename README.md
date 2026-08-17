@@ -27,9 +27,6 @@ I created TimerBuddy as a small personal project to explore how web technologies
 - CSS
 - Electron Builder
 
-## 📸 Preview
-
-![TimerBuddy Preview](src/assets/preview.png)
 
 ## 📥 Download & Install
 
